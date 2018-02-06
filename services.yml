@@ -1,0 +1,33 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: s1
+  labels:
+    app: nginx1
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+
+  selector:
+    app: nginx1
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: s2
+  labels:
+    app: nginx2
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: nginx2

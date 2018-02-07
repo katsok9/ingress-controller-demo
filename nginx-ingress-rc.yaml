@@ -30,6 +30,6 @@ spec:
         # Uncomment the lines below to enable extensive logging and/or customization of
         # NGINX configuration with configmaps
         args:
-         #- -v=3
-         #- -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
+          - -v=3
+          - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
           - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret

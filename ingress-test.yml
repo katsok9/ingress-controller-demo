@@ -8,7 +8,7 @@ spec:
       - my.example.com
       secretName: test-ingress-secret
   rules:
-  - host:
+  - host: my.example.com
     http:
       paths:
       - path: /html1

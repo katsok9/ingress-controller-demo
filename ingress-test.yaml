@@ -4,9 +4,9 @@ metadata:
   name: test
 spec:
   tls:
-    - hosts:
-      - my.example.com
-      secretName: test-ingress-secret
+  - hosts:
+    - my.example.com
+    secretName: test-ingress-secret
   rules:
   - host: my.example.com
     http:

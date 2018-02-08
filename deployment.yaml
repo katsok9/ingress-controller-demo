@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -17,3 +17,62 @@ spec:
         image: katsok9/nginx-hello-test:v1
         ports:
         - containerPort: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-deployment2
+spec:
+  selector:
+    matchLabels:
+      app: nginx2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx2
+    spec:
+      containers:
+      - name: nginx2
+        image: katsok9/nginx-hello2-test:v1
+        ports:
+        - containerPort: 80
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: s1
+  labels:
+    app: nginx1
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: nginx1
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: s2
+  labels:
+    app: nginx2
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: nginx2
+
+---
+

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 kubectl create -f default-server-secret.yaml
 kubectl create -f nginx-ingress-rc.yaml
 kubectl create -f deployment.yaml

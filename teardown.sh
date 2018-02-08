@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 kubectl delete -f ingress-test.yaml
 kubectl delete -f test-secret.yaml
 kubectl delete -f services.yaml

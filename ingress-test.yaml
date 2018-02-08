@@ -2,13 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: test
+  annotations:
+    nginx.org/server-snippets: |
+          ssl_verify_client optional;
 spec:
-  tls:
-  - hosts:
-    - my.example.com
-    secretName: test-ingress-secret
   rules:
-  - host: my.example.com
+  - host:
     http:
       paths:
       - path: /html1

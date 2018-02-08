@@ -5,17 +5,17 @@ metadata:
 spec:
   tls:
   - hosts:
-    - my.example.com
+      - kops.katsok9.net
     secretName: test-ingress-secret
   rules:
-  - host: my.example.com
+  - host: kops.katsok9.net
     http:
       paths:
       - path: /html1
         backend:
-          serviceName: s1
+          serviceName: nginx1
           servicePort: 80
       - path: /html2
         backend:
-          serviceName: s2
+          serviceName: nginx2
           servicePort: 80

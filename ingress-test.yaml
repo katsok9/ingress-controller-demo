@@ -1,13 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: test
+  name: ingress-test
   annotations:
-    nginx.org/server-snippets: |
-          ssl_verify_client optional;
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host:
+  - host: my.test.domain
     http:
       paths:
       - path: /html1

@@ -1,21 +1,27 @@
 # ingress-controller-demo
-An Ingress controller is an k8s object which implemented 
-to help make load balancing and security easy to deploy in k8s. 
-by listening to the ingress resource and executing its events.  
+An Ingress controller is a k8s object which helps to make load
+balancing and security easy to deploy in k8s, by listening to
+the ingress resource and executing its events.  
 
 
 
-## Contents
-Site1/2 folders with dokerfile for the different sites/apps.
+##prequisits
+* [**minikube v0.24.0**](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+   * [Download for linux ubuntu](https://storage.googleapis.com/minikube/releases/v0.24.0/minikube-linux-amd64)<br/>
+   * [Different releases](https://github.com/kubernetes/minikube/releases/)
 
-default-server-secret.yaml to create the ingress-rc secret
-nginx-ingress-rc.yaml for creating the ingress controller
+>#####After installing minikube run the following command:
+>```bash
+>minikube start
+>minikube addons enable ingress
+>``` 
+> #####This command initiates the minikube default ingress controller addon, which eliminates the need to self define an ingress controller.<br/>The default minikube ingress controller is implemented with nginx.
+  
 
-deployment.yaml and deplyment2.yaml for creating app deployments
-services.yaml to expose services for the apps
-
-test-secret.yaml & ingress-test.yaml for the secret and the ingrass resources. 
-
-also included deploy and teardown files for convenience. 
+#### Contents
+* The folders `./site1` and `./site2` contain dokerfiles for the different sites/apps.
+* The file `deployment.yaml` for creating app deployments and exposes services for the apps
+* The file `ingress-test.yaml` for the ingress resources. 
+* Also included deploy and teardown files for convenience. 
  
 

@@ -74,5 +74,3 @@ spec:
   selector:
     app: nginx2
 
----
-

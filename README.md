@@ -17,7 +17,8 @@ the ingress resource and executing its events.
 >``` 
 > ##### This command initiates the minikube default ingress controller addon, which eliminates the need to self define an ingress controller.<br/>The default minikube ingress controller is implemented with nginx.
 
-
+### Conf: 
+* hosname must be set in hosts file!
 #### Contents
 * The folders `./site1` and `./site2` contain dokerfiles for the different sites/apps.
 * The file `deployment.yaml` for creating app deployments and exposes services for the apps
